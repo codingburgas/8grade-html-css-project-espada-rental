@@ -1,260 +1,181 @@
-        /* Reset default browser styles for consistency */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        /* Create a full-screen gradient background and center the container */
-        body {
-            background: linear-gradient(135deg, #c02424, #000000);
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        /* Main container for the form with shadow and rounded corners */
-        .container {
-            width: 400px;
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            overflow: hidden; /* Ensures child elements respect border radius */
-        }
-        
-        /* Hide the radio buttons that will control the tabs */
-        .tab-control {
-            display: none;
-        }
-        
-        /* Tab container for login/signup options */
-        .tabs {
-            display: flex;
-        }
-        
-        /* Individual tab styling */
-        .tab-label {
-            flex: 1;
-            padding: 15px;
-            text-align: center;
-            background-color: #f1f1f1;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease; /* Smooth transition for hover effects */
-        }
-        
-        /* Hover effect for tabs */
-        .tab-label:hover {
-            background-color: #e0e0e0;
-        }
-        
-        /* When login tab is checked, style the login label */
-        #login-tab:checked ~ .tabs .login-label {
-            background-color: white;
-        }
+ /* Reset default margins and paddings, apply a consistent font */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-        /* When signup tab is checked, style the signup label */
-        #signup-tab:checked ~ .tabs .signup-label {
-            background-color: white;
-        }
-        
-        /* Container for the form content */
-        .form-container {
-            padding: 30px;
-        }
-        
-        /* Heading style for form titles */
-        h2 {
-            margin-bottom: 25px;
-            color: #9d1818;
-            text-align: center;
-        }
-        
-        /* Container for each form field */
-        .input-group {
-            margin-bottom: 20px;
-        }
-        
-        /* Label styling for form fields */
-        .input-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: #555;
-        }
-        
-        /* Input field styling */
-        .input-group input {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            font-size: 16px;
-            transition: border 0.3s ease;
-        }
-        
-        /* Focus state for input fields */
-        .input-group input:focus {
-            border-color: #ff0000;
-            outline: none;
-        }
-        
-        /* Forgot password link styling */
-        .forgot-password {
-            display: block;
-            text-align: right;
-            margin-top: -15px;
-            margin-bottom: 20px;
-            color: #000000;
-            text-decoration: none;
-            font-size: 14px;
-        }
-        
-        /* Hover effect for the forgot password link */
-        .forgot-password:hover {
-            text-decoration: underline;
-        }
-        
-        /* Button styling with gradient background */
-        button {
-            width: 100%;
-            padding: 12px;
-            background: linear-gradient(to right, #a30909b0, #000000);
-            border: none;
-            border-radius: 6px;
-            color: white;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        /* Hover effect for buttons */
-        button:hover {
-            background: linear-gradient(to right, #000000, #af1010a1);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* "OR" divider between main login and social login options */
-        .or-divider {
-            margin: 25px 0;
-            text-align: center;
-            position: relative;
-        }
-        
-        /* Horizontal line for the divider */
-        .or-divider::before {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background-color: #ddd;
-            z-index: 1;
-        }
-        
-        /* Text in the divider */
-        .or-divider span {
-            background-color: white;
-            padding: 0 15px;
-            position: relative;
-            z-index: 2;
-            color: #777;
-        }
-        
-        /* Container for social login buttons */
-        .social-login {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-        
-        /* Individual social login button styling */
-        .social-btn {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #ddd;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        /* Hover effect for social buttons */
-        .social-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Facebook button style */
-        .social-btn.fb {
-            background-color: #3b5998;
-            color: white;
-        }
-        
-        /* Google button style */
-        .social-btn.google {
-            background-color: white;
-            color: #db4437;
-        }
-        
-        /* Apple button style */
-        .social-btn.apple {
-            background-color: black;
-            color: white;
-        }
-        
-        /* Container for the signup/login links at bottom */
-        .signup-link {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 14px;
-            color: #555;
-        }
-        
-        /* Link styling in the signup/login text */
-        .signup-link a {
-            color: #000000;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        
-        /* Hover effect for the links */
-        .signup-link a:hover {
-            text-decoration: underline;
-        }
-        
-        /* Hide both forms by default */
-        .form {
-            display: none;
-        }
-        
-        /* Show login form when login tab is checked */
-        #login-tab:checked ~ .form-container .login {
-            display: block;
-        }
-        
-        /* Show signup form when signup tab is checked */
-        #signup-tab:checked ~ .form-container .signup {
-            display: block;
-        }
+/* Full screen gradient background and center the container */
+body {
+    background: linear-gradient(135deg, #c02424, #000000);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-        /* Styling for checkbox groups like "Remember me" */
-        .checkbox-group {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
+/* Styling the main container box */
+.container {
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
 
-        /* Checkbox input styling */
-        .checkbox-group input {
-            margin-right: 10px;
-            width: auto;
-        }
+/* Hide radio inputs used for tab switching */
+.tab-control { display: none; }
+
+/* Tab buttons layout */
+.tabs {
+    display: flex;
+}
+
+/* Styling each tab label */
+.tab-label {
+    flex: 1;
+    padding: 15px;
+    text-align: center;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* Highlight active tab */
+#login-tab:checked ~ .tabs .login-label,
+#signup-tab:checked ~ .tabs .signup-label {
+    background-color: white;
+}
+
+/* Container for login and signup forms */
+.form-container { padding: 30px; }
+
+/* Centered heading inside forms */
+h2 {
+    margin-bottom: 25px;
+    color: #9d1818;
+    text-align: center;
+}
+
+/* Grouping input fields */
+.input-group { margin-bottom: 20px; }
+
+/* Styling text inputs */
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border 0.3s ease;
+}
+
+/* Highlight input on focus */
+.input-group input:focus {
+    border-color: #ff0000;
+    outline: none;
+}
+
+/* "Forgot password" link style */
+.forgot-password {
+    display: block;
+    text-align: right;
+    margin: -15px 0 20px;
+    color: #000;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Primary action button styling */
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(to right, #a30909b0, #000000);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Divider with "OR" between form and social login */
+.or-divider {
+    margin: 25px 0;
+    text-align: center;
+    position: relative;
+}
+
+/* Styling the line of divider */
+.or-divider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: #ddd;
+    z-index: 1;
+}
+
+/* "OR" text styling */
+.or-divider span {
+    background-color: white;
+    padding: 0 15px;
+    position: relative;
+    z-index: 2;
+    color: #777;
+}
+
+/* Social login button container */
+.social-login {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* Style for individual social login buttons */
+.social-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Assign specific colors to social login buttons */
+.social-btn.fb { background-color: #3b5998; color: white; }
+.social-btn.google { background-color: white; color: #db4437; }
+.social-btn.apple { background-color: black; color: white; }
+
+/* Signup or Login link below the forms */
+.signup-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Hide both forms initially */
+.form { display: none; }
+
+/* Display login or signup form based on selected tab */
+#login-tab:checked ~ .form-container .login,
+#signup-tab:checked ~ .form-container .signup {
+    display: block;
+}
+
+/* Checkbox group styling */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
