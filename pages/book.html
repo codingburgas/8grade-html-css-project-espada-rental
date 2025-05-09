@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Top -->
+    <link rel="icon" type="image/png" href="../Pictures/top.jpg">
+    <link rel="stylesheet" href="../css/book.css">
+    <title>Book Your Car - Espada-Rental</title>
+</head>
+<body>
+    <!-- Site header with navigation -->
+    <header>
+        <div class="logo-container">
+            <a href="../html/index.html">
+                <img src="../Pictures/Logo.png" alt="Espada-Rental Logo" class="logo-img">
+            </a>
+            <div class="logo">Espada-Rental</div>
+        </div>
+        <nav>
+            <a href="../html/index.html">Home</a>
+            <a href="../html/index.html#cars">Cars</a>
+            <a href="https://maps.google.com/maps/?entry=wc">Locations</a>
+            <a href="#">About Us</a>
+            <a href="../html/subs.html">Subscriptions</a>
+            <a href="../html/signIn.html">Log In / Sign Up</a>
+        </nav>
+    </header>
+    
+    <div class="booking-container">
+        <h1 class="section-title">Complete Your Booking</h1>
+
+        <!-- Main booking form -->
+        <div class="booking-form">
+            <h2>Booking Details</h2>
+            <form action="confirmation.html" method="get">
+                <div class="form-group">
+                    <label for="pickup-date">Pick-up Date</label>
+                    <input type="date" id="pickup-date" name="pickup-date" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="return-date">Return Date</label>
+                    <input type="date" id="return-date" name="return-date" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="pickup-time">Pick-up Time</label>
+                    <input type="time" id="pickup-time" name="pickup-time" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="pickup-location">Pick-up Location</label>
+                    <select id="pickup-location" name="pickup-location" required>
+                        <option value="">Select a location</option>
+                        <option value="downtown">Downtown - City Center</option>
+                        <option value="airport">Airport Terminal</option>
+                        <option value="north">North Side - Main Street</option>
+                        <option value="south">South Mall - Shopping Center</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="additional">Additional Options</label>
+                    <select id="additional" name="additional">
+                        <option value="none">No additional options</option>
+                        <option value="insurance">Full Insurance (+$25/day)</option>
+                        <option value="gps">GPS Navigation (+$5/day)</option>
+                        <option value="child">Child Seat (+$8/day)</option>
+                        <option value="all">All options (+$35/day)</option>
+                    </select>
+                </div>
+                <a href="../html/sucbook.html" class="complete-booking" style="display: block; text-decoration: none; text-align: center;">Complete Booking</a>
+            </form>
+        </div>
+        
+        <!-- Map and locations section -->
+        <div class="map-section">
+            <h2 class="section-title">Pickup Locations</h2>
+            
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d94394.14503904444!2d27.40075999451096!3d42.50481826129321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a69238f6e94ef1%3A0x400fdd18c7b7140!2sBurgas%2C%20Bulgaria!5e0!3m2!1sen!2sus!4v1714840642015!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            
+            <!-- Location options boxes -->
+            <div class="location-options">
+                <div class="location-box">
+                    <h4>Downtown</h4>
+                    <p>123 Main Street</p>
+                    <p>City Center</p>
+                    <p>Open: 8AM - 8PM</p>
+                </div>
+                
+                <div class="location-box">
+                    <h4>Airport</h4>
+                    <p>Terminal 3</p>
+                    <p>International Airport</p>
+                    <p>Open: 24 hours</p>
+                </div>
+                
+                <div class="location-box">
+                    <h4>North Side</h4>
+                    <p>456 First Avenue</p>
+                    <p>North District</p>
+                    <p>Open: 9AM - 7PM</p>
+                </div>
+                
+                <div class="location-box">
+                    <h4>South Mall</h4>
+                    <p>789 Shopping Blvd</p>
+                    <p>South Mall Complex</p>
+                    <p>Open: 10AM - 9PM</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Site footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">FAQ</a>
+            <a href="#">Support</a>
+        </div>
+        <p class="copyright">© 2025 Espada-Rental. All rights reserved.</p>
+    </footer>
+</body>
+</html>
