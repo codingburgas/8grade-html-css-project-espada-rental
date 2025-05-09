@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/signIn.css">
+    <title>Login & Signup</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Radio buttons for tab switching -->
+        <input type="radio" name="tabs" id="login-tab" class="tab-control" checked>
+        <input type="radio" name="tabs" id="signup-tab" class="tab-control">
+        
+        <!-- Tab headers -->
+        <div class="tabs">
+            <label for="login-tab" class="tab-label login-label">Login</label>
+            <label for="signup-tab" class="tab-label signup-label">Sign Up</label>
+        </div>
+        
+        <!-- Container for forms -->
+        <div class="form-container">
+            <!-- Login Form -->
+            <div class="form login">
+                <h2>Welcome Back</h2>
+                <form action="../html/index.html" method="get">
+                    <!-- Email input -->
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Enter your email" required>
+                    </div>
+                    
+                    <!-- Password input -->
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Enter your password" required>
+                    </div>
+                    
+                    <!-- Forgot password link -->
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                    
+                    <!-- Remember me checkbox -->
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+                    
+                    <!-- Login button -->
+                    <button type="submit">Login</button>
+                    
+                    <!-- Divider -->
+                    <div class="or-divider"><span>OR</span></div>
+                    
+                    <!-- Social login buttons -->
+                    <div class="social-login">
+                        <div class="social-btn fb">F</div>
+                        <div class="social-btn google">G</div>
+                        <div class="social-btn apple">A</div>
+                    </div>
+                    
+                    <!-- Link to signup -->
+                    <div class="signup-link">
+                        Don't have an account? <label for="signup-tab">Sign up</label>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Signup Form -->
+            <div class="form signup">
+                <h2>Create Account</h2>
+                <form action="../html/index.html" method="get">
+                    <!-- Full name input -->
+                    <div class="input-group">
+                        <label for="fullname">Full Name</label>
+                        <input type="text" id="fullname" placeholder="Enter your full name" required>
+                    </div>
+                    
+                    <!-- Email input -->
+                    <div class="input-group">
+                        <label for="signup-email">Email</label>
+                        <input type="email" id="signup-email" placeholder="Enter your email" required>
+                    </div>
+                    
+                    <!-- Password input -->
+                    <div class="input-group">
+                        <label for="signup-password">Password</label>
+                        <input type="password" id="signup-password" placeholder="Create a password" required>
+                    </div>
+                    
+                    <!-- Confirm password input -->
+                    <div class="input-group">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+                    </div>
+                    
+                    <!-- Agree to terms checkbox -->
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="terms">
+                        <label for="terms">I agree to the Terms & Conditions</label>
+                    </div>
+                    
+                    <!-- Signup button -->
+                    <button type="submit">Sign Up</button>
+                    
+                    <!-- Divider -->
+                    <div class="or-divider"><span>OR</span></div>
+                    
+                    <!-- Social login buttons -->
+                    <div class="social-login">
+                        <div class="social-btn fb">F</div>
+                        <div class="social-btn google">G</div>
+                        <div class="social-btn apple">A</div>
+                    </div>
+                    
+                    <!-- Link to login -->
+                    <div class="signup-link">
+                        Already have an account? <label for="login-tab">Login</label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
