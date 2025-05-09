@@ -1,0 +1,181 @@
+ /* Reset default margins and paddings, apply a consistent font */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Full screen gradient background and center the container */
+body {
+    background: linear-gradient(135deg, #c02424, #000000);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Styling the main container box */
+.container {
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* Hide radio inputs used for tab switching */
+.tab-control { display: none; }
+
+/* Tab buttons layout */
+.tabs {
+    display: flex;
+}
+
+/* Styling each tab label */
+.tab-label {
+    flex: 1;
+    padding: 15px;
+    text-align: center;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* Highlight active tab */
+#login-tab:checked ~ .tabs .login-label,
+#signup-tab:checked ~ .tabs .signup-label {
+    background-color: white;
+}
+
+/* Container for login and signup forms */
+.form-container { padding: 30px; }
+
+/* Centered heading inside forms */
+h2 {
+    margin-bottom: 25px;
+    color: #9d1818;
+    text-align: center;
+}
+
+/* Grouping input fields */
+.input-group { margin-bottom: 20px; }
+
+/* Styling text inputs */
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border 0.3s ease;
+}
+
+/* Highlight input on focus */
+.input-group input:focus {
+    border-color: #ff0000;
+    outline: none;
+}
+
+/* "Forgot password" link style */
+.forgot-password {
+    display: block;
+    text-align: right;
+    margin: -15px 0 20px;
+    color: #000;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Primary action button styling */
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(to right, #a30909b0, #000000);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Divider with "OR" between form and social login */
+.or-divider {
+    margin: 25px 0;
+    text-align: center;
+    position: relative;
+}
+
+/* Styling the line of divider */
+.or-divider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: #ddd;
+    z-index: 1;
+}
+
+/* "OR" text styling */
+.or-divider span {
+    background-color: white;
+    padding: 0 15px;
+    position: relative;
+    z-index: 2;
+    color: #777;
+}
+
+/* Social login button container */
+.social-login {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* Style for individual social login buttons */
+.social-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Assign specific colors to social login buttons */
+.social-btn.fb { background-color: #3b5998; color: white; }
+.social-btn.google { background-color: white; color: #db4437; }
+.social-btn.apple { background-color: black; color: white; }
+
+/* Signup or Login link below the forms */
+.signup-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Hide both forms initially */
+.form { display: none; }
+
+/* Display login or signup form based on selected tab */
+#login-tab:checked ~ .form-container .login,
+#signup-tab:checked ~ .form-container .signup {
+    display: block;
+}
+
+/* Checkbox group styling */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
